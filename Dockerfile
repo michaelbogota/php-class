@@ -9,6 +9,11 @@ RUN apk add --no-cache \
     libxml2 \
     zlib
 
+RUN docker-php-ext-install -O \
+    pdo_mysql \
+    mysqli \
+    pdo_pgsql
+
 COPY . /app
 
 WORKDIR /app
