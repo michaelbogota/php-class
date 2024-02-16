@@ -1,7 +1,7 @@
 FROM php:8.2-fpm-alpine
 
 RUN curl -o ./install-php-extensions https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions
-RUN --chmod=0755 ./install-php-extensions
+RUN chmod 0755 ./install-php-extensions
 
 # Instalar dependencias para PHP
 RUN apk add --no-cache \
