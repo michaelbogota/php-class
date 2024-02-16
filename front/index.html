@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario HTML básico</title>
+    <title>Formulario básico con Bootstrap</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+9Au746+y559/pOnl0x483ffDBvFGAl/rPAQ4CM325B478gXq31vzbY/T" crossorigin="anonymous">
 </head>
 <body>
-<h1>Formulario de contacto</h1>
-<form action="/app/index.php" method="post">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Introduzca su nombre">
-    <br>
-    <label for="correo">Correo electrónico:</label>
-    <input type="email" id="correo" name="correo" placeholder="Introduzca su correo electrónico">
-    <br>
-    <label for="mensaje">Mensaje:</label>
-    <textarea id="mensaje" name="mensaje" rows="5" cols="30" placeholder="Introduzca su mensaje"></textarea>
-    <br>
-    <button type="submit">Enviar</button>
-</form>
+<div class="container">
+    <h1>Formulario de contacto</h1>
+    <form action="/action_page.php">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+        </div>
+        <div class="mb-3">
+            <label for="correo" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo electrónico">
+        </div>
+        <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/NKXW183UZHchg6en6A9FoP5ln9txT9l97YZrU" crossorigin="anonymous"></script>
 </body>
+</html>
