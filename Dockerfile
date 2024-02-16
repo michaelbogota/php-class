@@ -12,7 +12,7 @@ RUN apk add --no-cache \
     zlib
 
 # Instalar extensiones de MySQL y PostgreSQL
-RUN install-php-extensions -O \
+RUN /usr/local/bin/install-php-extensions -O \
     pdo_mysql \
     mysqli \
     pdo_pgsql
