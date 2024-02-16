@@ -13,4 +13,4 @@ COPY . /app
 
 WORKDIR /app
 
-CMD ["php", "-S", "0.0.0.0"]
+CMD ["php", "-S", "0.0.0.0:80"]
