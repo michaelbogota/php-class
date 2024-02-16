@@ -1,6 +1,6 @@
 FROM php:8.2-fpm-alpine
 
-RUN curl -o /usr/local/bin/install-php-extensions https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions
+RUN curl -o ./install-php-extensions https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions
 
 # Instalar dependencias para PHP
 RUN apk add --no-cache \
@@ -12,7 +12,7 @@ RUN apk add --no-cache \
     zlib
 
 # Instalar extensiones de MySQL y PostgreSQL
-RUN /usr/local/bin/install-php-extensions -O \
+RUN ./install-php-extensions -O \
     pdo_mysql \
     mysqli \
     pdo_pgsql
