@@ -1,16 +1,19 @@
 FROM php:8.2-fpm-alpine
 
-RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o - | sh -s \
-      pdo_pgsql
-
+# Instalar dependencias para PHP
 RUN apk add --no-cache \
     curl \
-    git \
     libzip \
     libjpeg-turbo \
     libpng \
     libxml2 \
-    zlib \
+    zlib
+
+# Instalar extensiones de MySQL y PostgreSQL
+RUN docker-php-ext-install -O \
+    pdo_mysql \
+    mysqli \
+    pdo_pgsql
 
 COPY . /app
 
