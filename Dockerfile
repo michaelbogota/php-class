@@ -12,7 +12,7 @@ RUN apk add --no-cache \
     zlib
 
 # Instalar extensiones de MySQL y PostgreSQL
-RUN docker-php-ext-install -O \
+RUN install-php-extensions -O \
     pdo_mysql \
     mysqli \
     pdo_pgsql
