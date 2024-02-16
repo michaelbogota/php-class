@@ -13,7 +13,7 @@ $mensaje = $_POST['mensaje'];
 </head>
 <body>
 <h1>Formulario de contacto</h1>
-<form action="/index.php" method="post">
+<form action="/app/index.php" method="post">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" placeholder="Introduzca su nombre">
     <br>
