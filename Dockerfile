@@ -1,22 +1,9 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.2-fpm
 
-RUN curl -o ./install-php-extensions https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions
-RUN chmod 0755 ./install-php-extensions
-
-# Instalar dependencias para PHP
-RUN apk add --no-cache \
-    curl \
-    libzip \
-    libjpeg-turbo \
-    libpng \
-    libxml2 \
-    zlib
-
-# Instalar extensiones de MySQL y PostgreSQL
-RUN ./install-php-extensions -O \
-    pdo_mysql \
-    mysqli \
-    pdo_pgsql
+RUN apt-get update \
+    && apt-get install -y libpq-dev \
+    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+    && docker-php-ext-install pdo pdo_pgsql pgsql
 
 COPY . /app
 
