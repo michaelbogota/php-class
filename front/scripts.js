@@ -1,11 +1,10 @@
 const form = document.getElementById("formulario");
 const button = document.getElementById("submit");
-const loader = document.getElementById("loader");
 const success = document.getElementById("success");
 const error = document.getElementById("error");
 form.addEventListener("submit", (event) => {
     button.disabled = true;
-    loader.style.display = "block";
+    button.innerText = "Cargando......";
     event.preventDefault();
     const data = new FormData(form);
     const xhr = new XMLHttpRequest();
@@ -22,6 +21,7 @@ form.addEventListener("submit", (event) => {
             console.error(xhr.responseText);
             error.style.display = "block";
         }
+        button.innerText = "Enviar";
         setTimeout(() => {
             success.style.display = "none";
             error.style.display = "none";

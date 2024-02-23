@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="container">
+    <br>
     <div id="success" style="display: none;" class="alert alert-success" role="alert">
         Se inseto muy bien
     </div>
@@ -33,9 +34,32 @@
         </div>
         <button type="submit" id="submit" class="btn btn-primary">Enviar</button>
     </form>
-    <div id="loader" style="display: none;" class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
+
+    <h1>Lista de contacto</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Mensaje</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

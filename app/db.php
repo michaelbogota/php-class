@@ -29,13 +29,22 @@ class db
         }
     }
 
-    public function query($sql)
+    public function insert($sql)
     {
         $result = pg_query($this->db, $sql);
         if (!$result) {
             return pg_last_error($this->db);
         }
         return true;
+    }
+
+    public function query($sql)
+    {
+        $result = pg_query($this->db, $sql);
+        if (!$result) {
+            return pg_last_error($this->db);
+        }
+        return pg_fetch_all($result, PGSQL_ASSOC);
     }
 
     public function close()
