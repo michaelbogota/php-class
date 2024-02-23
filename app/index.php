@@ -3,6 +3,7 @@
 require_once __DIR__ . "/db.php";
 
 $headers = getallheaders();
+var_dump($headers);
 if (array_key_exists('api-key', $headers)) {
     $apiKey = $headers['api-key'];
     $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : "";
