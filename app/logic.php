@@ -18,8 +18,8 @@ function records()
     $db = new db();
     $result = $db->query("SELECT * FROM usuarios");
     if (is_array($result)) {
-        echo json_encode($result);
         header("Content-Type: application/json; charset=utf-8");
+        echo json_encode($result);
         http_response_code(200);
     }
 }
