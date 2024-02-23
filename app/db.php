@@ -33,9 +33,9 @@ class db
     {
         $result = pg_query($this->db, $sql);
         if (!$result) {
-            echo "Error al ejecutar la consulta: " . pg_last_error($this->db);
+            return pg_last_error($this->db);
         }
-        return $result;
+        return true;
     }
 
     public function close()
