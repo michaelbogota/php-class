@@ -17,6 +17,7 @@ function records()
 {
     $db = new db();
     $result = $db->query("SELECT * FROM usuarios");
+    var_dump($result);
     if (is_array($result)) {
         echo json_encode($result);
         http_response_code(200);
