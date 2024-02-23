@@ -1,6 +1,6 @@
 <?php
 
-require_once "./db.php";
+require_once __DIR__ . "/db.php";
 
 $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : "";
 $correo = isset($_POST['correo']) ? $_POST['correo'] : "";
