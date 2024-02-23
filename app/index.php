@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/db.php";
 
-$headers = getallheaders();
+$headers = array_change_key_case(getallheaders(), CASE_LOWER);
 var_dump($headers);
 if (array_key_exists('api-key', $headers)) {
     $apiKey = $headers['api-key'];
