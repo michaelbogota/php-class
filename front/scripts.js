@@ -7,9 +7,7 @@ form.addEventListener("submit", (event) => {
     button.disabled = true;
     loader.style.display = "block";
     event.preventDefault();
-    const data = new FormData();
-    formData.append("username", "Groucho");
-    formData.append("accountnum", 123456);
+    const data = new FormData(form);
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "https://php-test-0twc.onrender.com/");
     xhr.setRequestHeader("api-key", "9942f9ab-5568-44ce-b63c-2f77b9b7a1e7");
